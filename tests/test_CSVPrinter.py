@@ -1,4 +1,8 @@
 import unittest
+
+from speciallecture.CSVPrinter import CSVPrinter
+
+
 def setUpModule():
     print('Running setUpModule')
 def tearDownModule():
@@ -18,4 +22,6 @@ class TestCSVPrinter(unittest.TestCase):
         print("Running test_read1")
     def test_read2(self):
         print("Running test_read2")
+    def test_read3(self):
+        printer = CSVPrinter("sample.csv")
 
