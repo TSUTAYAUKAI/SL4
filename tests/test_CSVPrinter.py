@@ -46,6 +46,6 @@ class TestCSVPrinter(unittest.TestCase):
     #         printer = CSVPrinter("sample2.csv")
     #         printer.read()
     #         unittest.TestCase.fail("This line should not be invoked")
-
+    #     print("aaa")
 
 
