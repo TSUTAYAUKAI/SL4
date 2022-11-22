@@ -41,6 +41,11 @@ class TestCSVPrinter(unittest.TestCase):
         except FileNotFoundError as e:
             pass
 
+    def test_read4(self):
+        with self.assertRaises(FileNotFoundError):
+            printer = CSVPrinter("sample2.csv")
+            printer.read()
+            unittest.TestCase.fail("This line should not be invoked")
 
 
 
