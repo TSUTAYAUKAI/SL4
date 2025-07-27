@@ -8,5 +8,5 @@ class SortAlgorithm:
         else:
             pivot = arr[0]
             less_than_pivot = [x for x in arr[1:] if x <= pivot]
-            greater_than_pivot = [x for x in arr[1:] if x >= pivot]
+            greater_than_pivot = [x for x in arr[1:] if x > pivot]
             return self.buggy_quick_sort(less_than_pivot) + [pivot] + self.buggy_quick_sort(greater_than_pivot)
