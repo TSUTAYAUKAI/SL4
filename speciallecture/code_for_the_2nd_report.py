@@ -1,21 +1,22 @@
 # プログラムの説明:
 # このプログラムは、複数の学生の成績を管理し、合計点と平均点を計算し、
 # 最も成績の良い学生を見つけます。
+
+def calc_total_and_avg(grades):
+    total = sum(grades)
+    avg = total / len(grades)
+    return total, avg
+
 def run(students):
-    x = 0
-    y = ""
-    for s in students:
-        total = 0
-        count = 0
-        for g in students[s]:
-            total += g
-            count += 1
-        avg = total / count
-        if total > x:
-            x = total
-            y = s
-        print(f"Student: {s}, Total: {total}, Average: {avg}")
-    return y, x
+    top_total = -1
+    top_name = ""
+    for name, grades in students.items():
+        total, avg = calc_total_and_avg(grades)
+        if total > top_total:
+            top_total = total
+            top_name = name
+        print(f"Student: {name}, Total: {total}, Average: {avg}")
+    return top_name, top_total
 
 students = {
     "Alice": [85, 90, 78],
